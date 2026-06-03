@@ -916,7 +916,7 @@ function setupIPC(): void {
                 .trim()
                 .slice(0, 80);
               new Notification({
-                title: "Hermes Agent",
+                title: "Hermes One",
                 body: preview || "Response ready",
               }).show();
             }
@@ -928,7 +928,7 @@ function setupIPC(): void {
             // Notify on error too if window not focused
             if (mainWindow && !mainWindow.isFocused()) {
               new Notification({
-                title: "Hermes Agent — Error",
+                title: "Hermes One — Error",
                 body: error.slice(0, 100),
               }).show();
             }
@@ -1931,7 +1931,7 @@ if (process.env.ENABLE_CDP === "1") {
 }
 
 app.whenReady().then(() => {
-  app.name = "Hermes";
+  app.setName("Hermes One");
   electronApp.setAppUserModelId("com.nousresearch.hermes");
 
   // Allow microphone access for the app's own renderer (voice input). Without
